@@ -1,5 +1,4 @@
 # scdl (airuei edit)
-## Description
 
 Edit of flyingrub's build of scdl. Downloads original / full-size artwork now.
 
@@ -8,10 +7,9 @@ Edit of flyingrub's build of scdl. Downloads original / full-size artwork now.
 
 * python3
 * ffmpeg
-* PIL (Python image library)
 
 ## Installation Instructions
-Simply run the following command:
+Simply run the following commands:
 ```
 pip3 install Pillow
 pip3 install git+https://github.com/airuei/scdl

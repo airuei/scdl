@@ -79,6 +79,8 @@ from scdl import client, utils
 from datetime import datetime
 import subprocess
 
+from PIL import Image
+
 logging.basicConfig(level=logging.INFO, format='%(message)s')
 logging.getLogger('requests').setLevel(logging.WARNING)
 logger = logging.getLogger(__name__)
@@ -701,7 +703,6 @@ def set_metadata(track, filename, playlist_info=None):
     if not artwork_url:
         artwork_url = user['avatar_url']
     artwork_url = artwork_url.replace('large', 'original')
-    print artwork_url
     response = requests.get(artwork_url, stream=True)
     with tempfile.NamedTemporaryFile() as out_file:
         shutil.copyfileobj(response.raw, out_file)
@@ -747,8 +748,10 @@ def set_metadata(track, filename, playlist_info=None):
             if a.__class__ == mutagen.flac.FLAC:
                 p = mutagen.flac.Picture()
                 p.data = out_file.read()
-                p.width = 500
-                p.height = 500
+                betterImg = PIL.Image.open(artwork_url)
+                betterWidth, betterHeight = betterImg.size
+                p.width = betterWidth
+                p.height = betterHeight
                 p.type = mutagen.id3.PictureType.COVER_FRONT
                 a.add_picture(p)
             elif a.__class__ == mutagen.mp3.MP3:

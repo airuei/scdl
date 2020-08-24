@@ -26,7 +26,7 @@ setup(
         'requests',
         'clint'
     ],
-    url='https://github.com/flyingrub/scdl',
+    url='https://github.com/airuei/scdl',
     classifiers=[
         'Programming Language :: Python',
         'Development Status :: 5 - Production/Stable',

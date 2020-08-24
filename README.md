@@ -1,17 +1,21 @@
-# Soundcloud Music Downloader
+# scdl (airuei edit)
 ## Description
 
-This script is able to download music from SoundCloud and set id3tag to the downloaded music.
-Compatible with Windows, OS X, Linux.
+Edit of flyingrub's build of scdl. Downloads original / full-size artwork now.
 
 
 ## System requirements
 
 * python3
 * ffmpeg
+* PIL (Python image library)
 
 ## Installation Instructions
-https://github.com/flyingrub/scdl/wiki/Installation-Instruction
+Simply run the following command:
+```
+pip3 install Pillow
+pip3 install git+https://github.com/airuei/scdl
+```
 
 ## Examples:
 ```

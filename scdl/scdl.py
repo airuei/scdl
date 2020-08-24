@@ -700,7 +700,8 @@ def set_metadata(track, filename, playlist_info=None):
     user = track['user']
     if not artwork_url:
         artwork_url = user['avatar_url']
-    artwork_url = artwork_url.replace('t500x500', 'original')
+    artwork_url = artwork_url.replace('large', 't500x500')
+    print artwork_url
     response = requests.get(artwork_url, stream=True)
     with tempfile.NamedTemporaryFile() as out_file:
         shutil.copyfileobj(response.raw, out_file)
